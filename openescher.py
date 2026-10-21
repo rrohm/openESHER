@@ -1,10 +1,14 @@
 from pathlib import Path
 import ollama
+import subprocess
 
-MODEL = "qwen3:8b"
+#MODEL = "qwen3:8b"
+#MODEL = "devstral:latest"
+MODEL = "gemma4:latest"
 PROJECT_ROOT = Path.cwd().resolve()
 MAX_CHARS = 20_000
 PAGE_SIZE = 40
+NUM_THREADS = 31
 
 
 def safe_path(path: str = ".") -> Path:
@@ -51,6 +55,23 @@ def cat(path: str) -> str:
         text = text[:MAX_CHARS] + "\n...[output truncated]"
     return text
 
+def git_status() -> str:
+    """Get Git status for the project directory."""
+    try:
+        # Run git status in the project root
+        result = subprocess.run(
+            ["git", "status", "--porcelain"],
+            cwd=PROJECT_ROOT,
+            capture_output=True,
+            text=True,
+            check=True
+        )
+        return result.stdout
+    except subprocess.CalledProcessError as e:
+        return f"Git error: {e.stderr}"
+    except FileNotFoundError:
+        return "Git not found in PATH - ensure Git is installed and accessible"
+
 
 def head(path: str, n: int = 10) -> str:
     """Show the first n lines of a project text file."""
@@ -85,7 +106,7 @@ def more(path: str, start_line: int = 1, n: int = PAGE_SIZE) -> str:
     return "\n".join(numbered)
 
 
-TOOLS = [ls, cat, head, tail, more]
+TOOLS = [ls, cat, head, tail, more, git_status]
 FUNCTIONS = {fn.__name__: fn for fn in TOOLS}
 
 messages = [
@@ -95,7 +116,8 @@ messages = [
             f"You are a coding assistant. The project root is {PROJECT_ROOT}. "
             "Use the provided read-only tools when you need to inspect project files. "
             "Paths must be relative to the project root. Never claim to have read a file "
-            "unless a tool returned its contents."
+            "unless a tool returned its contents. "
+            "Use the git_status tool for showing the git status of the project."
         ),
     }
 ]
@@ -129,6 +151,7 @@ while True:
                 model=MODEL,
                 messages=messages,
                 tools=TOOLS,
+                options={"num_threads": NUM_THREADS}
             )
 
             messages.append(response.message)
