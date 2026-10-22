@@ -34,7 +34,7 @@ are some things to be told beside the code, let alone user guides and tutorials.
 This project also tries to show, *why* things are done *in that way* or another. The GitHub pages contain 
 conceptual articles and background information on building agentic AI tools like openESHER.
 
-**Note:** The openESHER GitHub pages are work-in-progress – „by design“. The grow with the software. 
+**Note:** The openESHER GitHub pages are work-in-progress – „by design“. They grow with the software. 
 
 
 
