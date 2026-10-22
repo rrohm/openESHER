@@ -35,7 +35,6 @@ plugins:
 # Content structure
 header_pages:
   - index.md 
-  - overview.md
   - about.md
 
 # Exclude from processing.
