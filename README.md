@@ -1,6 +1,6 @@
 # openESHER
 
-*The open **Experimental System for Human-guided Engineering and Reasoning*
+*The open Experimental System for Human-guided Engineering and Reasoning*
 
 This is a small example or learning project for illustrating how agentic AI can work. 
 The name is a tribute to the Dutch artist Maurits Cornelis Escher and his famous litography "Drawing Hands", 

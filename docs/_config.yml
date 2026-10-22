@@ -21,10 +21,8 @@
 title: The „openESHER“ pages
 email: info@aeonium-systems.de
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "/pages" # the subpath of your site, e.g. /blog
+  openESHER – the free and open source Experimental System for Human-guided Engineering and Reasoning.
+baseurl: "/openESHER" # the subpath of your site, e.g. /blog
 url: "rrohm.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
 github_username:  rrohm
