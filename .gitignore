@@ -1,2 +1,5 @@
+.vscode
 docs/_site
 docs/Gemfile*
+docs/bk
+__pycache__
