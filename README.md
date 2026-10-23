@@ -16,7 +16,7 @@ in the initial idea:
 Thus, the project has two equally important parts:
 
 1. The software
-2. The openESHER GitHub pages
+2. The [openESHER GitHub pages](https://rrohm.github.io/openESHER/)
 
 
 ### The Software
