@@ -19,9 +19,9 @@
 # in the templates via {{ site.myvariable }}.
 
 title: The „openESHER“ pages
-email: info@aeonium-systems.de
+email: openesher@rrohm.de
 description: >- # this means to ignore newlines until "baseurl:"
-  openESHER – the free and open source Experimental System for Human-guided Engineering and Reasoning.
+  openESHER – a free and open source Experimental System for Human-guided Engineering and Reasoning.
 baseurl: "/openESHER" # the subpath of your site, e.g. /blog
 url: "rrohm.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
