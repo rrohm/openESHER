@@ -15,7 +15,7 @@ The first iteration is a classical "Hello world!". After the necessary [preparat
 import ollama
 
 response = ollama.chat(
-    model="llama3.1",
+    model="mistral:latest",
     messages=[{"role": "user", "content": "Say hello"}],
 )
 print(response.message.content)
@@ -38,6 +38,18 @@ python3 my_chat.py
 ```
 
 You will see: The model will answer! 
+
+Now, change the example above to some real question, and run it again, e.g.: 
+
+```python
+import ollama
+
+response = ollama.chat(
+    model="mistral:latest",
+    messages=[{"role": "user", "content": "How can I create an AI agent with Python and Ollama?"}],
+)
+print(response.message.content)
+```
 
 Of course this is a little bit short for a real communication. The next step will be to stay in touch with the model, i.e., 
 to stay in a *loop* where you can exchange a series of messages and responses with the model – a real conversation!
