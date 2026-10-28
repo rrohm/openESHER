@@ -1,4 +1,5 @@
 .vscode
+.venv
 docs/_site
 docs/Gemfile*
 docs/bk
